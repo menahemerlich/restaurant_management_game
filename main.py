@@ -1,21 +1,17 @@
+from classes.customer import Customer
+from classes.order import Order
 from classes.menu_item import Menu_item
-from classes.menu import Menu
 
-m1 = Menu_item("a", 10, "food")
-m2 = Menu_item("b", 10, "food")
-m3 = Menu_item("c", 10, "fooad")
-m = Menu(items = [])
-m.add_item(m1)
-m.add_item(m2)
-m.add_item(m3)
-print(len(m.items))
-m.remove_item("a")
-print(len(m.items))
-f = m.get_item_by_name("a")
-ff = m.get_items_by_category("food")
-print(len(ff))
-m.display_menu()
-print(m.get_total_items())
+item1 = Menu_item("banana", 10, "food")
+item2 = Menu_item("appel", 5, "food")
+cost1 = Customer("Avi")
+ord1 = Order(cost1, 1)
+ord1.add_item(item1)
+ord1.add_item(item2)
+ord1.display_order()
+ord1.set_status("cooking")
+ord1.display_order()
+
 
 
 
